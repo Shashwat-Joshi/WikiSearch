@@ -6,10 +6,10 @@ import 'package:wikiapp/routes/app_routes.dart';
 import 'package:wikiapp/theme/app_theme.dart';
 
 void main() async {
+  Hive.registerAdapter<WikiPage>(WikiPageAdapter());
   await Hive.initFlutter();
   await Hive.openBox("search-cache");
   await Hive.openBox("news-articles-cache");
-  Hive.registerAdapter((WikiPageAdapter()));
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     statusBarColor: AppTheme.primaryColor,
     systemNavigationBarColor: AppTheme.primaryColor,

@@ -14,7 +14,7 @@ class WikisearchCubit extends Cubit<WikisearchState> {
   // Can be used for pagination later on !
   int _gpsOffSet = 0;
 
-  Queue<Map<String, dynamic>> _articlesCache = Queue();
+  Queue _articlesCache = Queue();
   var _box = Hive.box("news-articles-cache");
 
   WikisearchCubit() : super(WikisearchInitial());
@@ -35,36 +35,35 @@ class WikisearchCubit extends Cubit<WikisearchState> {
           pages.add(page);
         });
         List? articles = _box.get("articles") ?? null;
-        print(articles);
         if (articles != null) {
           _articlesCache.clear();
           articles.forEach((article) {
             _articlesCache.add(article);
           });
         }
-        print(_articlesCache);
         updateLocalCache(searchKeyword);
         emit(WikisearchLoaded());
       }
     } catch (e) {
-      bool _cacheAvailable = await getLocalCache(searchKeyword);
-      print(_cacheAvailable.toString() + "\n\n\n\n");
-      if (_cacheAvailable) {
-        emit(WikisearchLoaded());
-      } else {
+      {
         if (isRefresh) {
           throw Exception(
             "Failed to refresh, please check your network and try again!",
           );
         } else {
-          emit(WikisearchError());
+          bool _cacheAvailable = await getLocalCache(searchKeyword);
+          if (_cacheAvailable) {
+            emit(WikisearchLoaded());
+          } else {
+            emit(WikisearchError());
+          }
         }
       }
     }
   }
 
   Future<void> updateLocalCache(String searchKeyword) async {
-    Map<String, dynamic> _cacheData = {
+    var _cacheData = {
       "keyword": searchKeyword,
       "results": pages,
     };
@@ -112,18 +111,3 @@ class WikisearchCubit extends Cubit<WikisearchState> {
     return false;
   }
 }
-
-// [
-//   {
-    // keyword: "sachin",
-    // results: [],
-//   },
-//   {
-//     keyword: "bitcoin",
-//     results: [],
-//   },
-//   {
-//     keyword: "computer science",
-//     results: [],
-//   },
-// ]
