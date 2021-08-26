@@ -5,3 +5,11 @@ class WikiSearchArgs {
     required this.searchKeyword,
   });
 }
+
+class WebViewArgs {
+  final String url;
+
+  WebViewArgs({
+    required this.url,
+  });
+}

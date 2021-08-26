@@ -2,18 +2,15 @@ import 'package:app_settings/app_settings.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
-import 'package:wikiapp/cubits/wiki_search_cubit/wiki_search/wikisearch_cubit.dart';
 import 'package:wikiapp/theme/app_theme.dart';
 
 class NoInternetWidget extends StatelessWidget {
   final Size size;
-  final WikisearchCubit cubit;
-  final String searchKeyword;
+  final Function callback;
 
   const NoInternetWidget({
     required this.size,
-    required this.cubit,
-    required this.searchKeyword,
+    required this.callback,
   });
 
   @override
@@ -100,7 +97,7 @@ class NoInternetWidget extends StatelessWidget {
                 Icons.refresh,
                 size,
                 () {
-                  cubit.fetchWikiPages(searchKeyword);
+                  this.callback();
                 },
               ),
             ],

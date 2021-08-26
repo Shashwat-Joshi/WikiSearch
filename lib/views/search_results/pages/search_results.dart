@@ -126,8 +126,9 @@ class _SearchResultsState extends State<SearchResults> {
     } else if (state is WikisearchError) {
       return NoInternetWidget(
         size: size,
-        cubit: cubit,
-        searchKeyword: widget.searchKeyword,
+        callback: () {
+          cubit.fetchWikiPages(widget.searchKeyword);
+        },
       );
     }
   }

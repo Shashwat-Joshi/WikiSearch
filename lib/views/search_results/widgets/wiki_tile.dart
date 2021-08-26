@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:wikiapp/models/wikipage/Wikipage.dart';
 import 'package:wikiapp/theme/app_theme.dart';
 import 'package:wikiapp/utils/api_endpoints.dart';
+import 'package:wikiapp/utils/screen_arguments.dart';
 
 class WikiTile extends StatelessWidget {
   final Size size;
@@ -30,7 +31,11 @@ class WikiTile extends StatelessWidget {
               vertical: 10.0,
             ),
             onPressed: () {
-              Navigator.pushNamed(context, "/webview", arguments: page);
+              Navigator.pushNamed(
+                context,
+                "/webview",
+                arguments: WebViewArgs(url: page.fullurl),
+              );
             },
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

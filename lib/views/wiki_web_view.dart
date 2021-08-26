@@ -2,14 +2,13 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-import 'package:wikiapp/models/wikipage/Wikipage.dart';
 import 'package:wikiapp/theme/app_theme.dart';
 
 class WikiWebView extends StatefulWidget {
-  final WikiPage wikiPage;
+  final String url;
 
   const WikiWebView({
-    required this.wikiPage,
+    required this.url,
   });
 
   @override
@@ -22,7 +21,6 @@ class _WikiWebViewState extends State<WikiWebView> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: AppTheme.searchScreenBGColor,
@@ -50,7 +48,7 @@ class _WikiWebViewState extends State<WikiWebView> {
           _controller.complete(controller);
         },
         // initialUrl: ApiEndPoints.wikiPageUrl(widget.wikiPage.pageid),
-        initialUrl: widget.wikiPage.fullurl,
+        initialUrl: widget.url,
         javascriptMode: JavascriptMode.unrestricted,
       ),
     );

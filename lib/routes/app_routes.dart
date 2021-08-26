@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:wikiapp/cubits/home_screen/news/newscubit_cubit.dart';
 import 'package:wikiapp/cubits/wiki_search_cubit/search_cache/searchcache_cubit.dart';
 import 'package:wikiapp/cubits/wiki_search_cubit/wiki_search/wikisearch_cubit.dart';
-import 'package:wikiapp/models/wikipage/Wikipage.dart';
 import 'package:wikiapp/utils/screen_arguments.dart';
-import 'package:wikiapp/views/home_screen.dart';
+import 'package:wikiapp/views/home_screen/pages/home_screen.dart';
 import 'package:wikiapp/views/search_results/pages/search_results.dart';
 import 'package:wikiapp/views/search_screen/pages/search_screen.dart';
 import 'package:wikiapp/views/wiki_web_view.dart';
@@ -27,7 +27,12 @@ class AppRoutes {
       // case "/":
       //   return getPageRoute(SplashScreen());
       case "/":
-        return getMaterialRoute(HomeScreen());
+        return getMaterialRoute(
+          BlocProvider(
+            create: (context) => NewsCubit(),
+            child: HomeScreen(),
+          ),
+        );
 
       case "/search":
         final WikiSearchArgs? args = route.arguments as WikiSearchArgs?;
@@ -50,8 +55,8 @@ class AppRoutes {
         );
 
       case "/webview":
-        final args = route.arguments as WikiPage;
-        return getMaterialRoute(WikiWebView(wikiPage: args));
+        final args = route.arguments as WebViewArgs;
+        return getMaterialRoute(WikiWebView(url: args.url));
     }
   }
 }
