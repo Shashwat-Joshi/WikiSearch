@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wikiapp/cubits/home_screen/news/newscubit_cubit.dart';
+import 'package:wikiapp/cubits/news/newscubit_cubit.dart';
 import 'package:wikiapp/cubits/wiki_search_cubit/search_cache/searchcache_cubit.dart';
 import 'package:wikiapp/cubits/wiki_search_cubit/wiki_search/wikisearch_cubit.dart';
 import 'package:wikiapp/utils/screen_arguments.dart';
 import 'package:wikiapp/views/home_screen/pages/home_screen.dart';
 import 'package:wikiapp/views/search_results/pages/search_results.dart';
 import 'package:wikiapp/views/search_screen/pages/search_screen.dart';
+import 'package:wikiapp/views/splash_screen.dart';
 import 'package:wikiapp/views/wiki_web_view.dart';
 
 class AppRoutes {
@@ -24,9 +25,10 @@ class AppRoutes {
 
   static Route? onGeneratedRoutes(RouteSettings route) {
     switch (route.name) {
-      // case "/":
-      //   return getPageRoute(SplashScreen());
       case "/":
+        return getPageRoute(SplashScreen());
+
+      case "/home":
         return getMaterialRoute(
           BlocProvider(
             create: (context) => NewsCubit(),

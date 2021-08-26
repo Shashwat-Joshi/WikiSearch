@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wikiapp/cubits/home_screen/news/newscubit_cubit.dart';
+import 'package:wikiapp/cubits/news/newscubit_cubit.dart';
 import 'package:wikiapp/theme/app_theme.dart';
 
 import 'news_tile.dart';

@@ -2,7 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';
-import 'package:wikiapp/cubits/home_screen/news/newscubit_cubit.dart';
+import 'package:wikiapp/cubits/news/newscubit_cubit.dart';
 import 'package:wikiapp/theme/app_theme.dart';
 import 'package:wikiapp/views/home_screen/widgets/news_list.dart';
 import 'package:wikiapp/views/search_results/widgets/nointernet_widget.dart';
@@ -90,9 +90,21 @@ class _HomeScreenState extends State<HomeScreen> {
                           Container(
                             width: size.width,
                             child: Center(
-                              child: Text(
-                                "WikiSearch",
-                                style: AppTheme.logoStyle,
+                              child: RichText(
+                                text: TextSpan(
+                                  children: [
+                                    TextSpan(
+                                      text: "Wiki",
+                                      style: AppTheme.logoStyle.copyWith(
+                                        color: AppTheme.blueColor,
+                                      ),
+                                    ),
+                                    TextSpan(
+                                      text: "Search",
+                                      style: AppTheme.logoStyle,
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),

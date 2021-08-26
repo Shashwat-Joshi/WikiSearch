@@ -48,7 +48,7 @@ class _SearchResultsState extends State<SearchResults> {
           statusBarColor: AppTheme.primaryColor,
           systemNavigationBarColor: AppTheme.primaryColor,
         ));
-        Navigator.pushReplacementNamed(context, "/");
+        Navigator.pushReplacementNamed(context, "/home");
         return Future.value(true);
       },
       child: Scaffold(
