@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wikiapp/cubit/wiki_search_cubit/search_cache/searchcache_cubit.dart';
+import 'package:wikiapp/cubits/wiki_search_cubit/search_cache/searchcache_cubit.dart';
 import 'package:wikiapp/theme/app_theme.dart';
 import 'package:wikiapp/utils/screen_arguments.dart';
-import 'package:wikiapp/view/search_screen/widgets/search_history_list.dart';
+import 'package:wikiapp/views/search_screen/widgets/search_history_list.dart';
 
 class SearchScreen extends StatefulWidget {
   final String? searchKeyword;

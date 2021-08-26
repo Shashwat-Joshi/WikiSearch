@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wikiapp/cubit/wiki_search_cubit/wiki_search/wikisearch_cubit.dart';
+import 'package:wikiapp/cubits/wiki_search_cubit/wiki_search/wikisearch_cubit.dart';
 import 'package:wikiapp/theme/app_theme.dart';
 import 'package:wikiapp/utils/screen_arguments.dart';
 

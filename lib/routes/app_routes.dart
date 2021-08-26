@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wikiapp/cubit/wiki_search_cubit/search_cache/searchcache_cubit.dart';
-import 'package:wikiapp/cubit/wiki_search_cubit/wiki_search/wikisearch_cubit.dart';
+import 'package:wikiapp/cubits/wiki_search_cubit/search_cache/searchcache_cubit.dart';
+import 'package:wikiapp/cubits/wiki_search_cubit/wiki_search/wikisearch_cubit.dart';
 import 'package:wikiapp/models/wikipage/Wikipage.dart';
 import 'package:wikiapp/utils/screen_arguments.dart';
-import 'package:wikiapp/view/home_screen.dart';
-import 'package:wikiapp/view/search_results/pages/search_results.dart';
-import 'package:wikiapp/view/search_screen/pages/search_screen.dart';
-import 'package:wikiapp/view/wiki_web_view.dart';
+import 'package:wikiapp/views/home_screen.dart';
+import 'package:wikiapp/views/search_results/pages/search_results.dart';
+import 'package:wikiapp/views/search_screen/pages/search_screen.dart';
+import 'package:wikiapp/views/wiki_web_view.dart';
 
 class AppRoutes {
   static MaterialPageRoute getMaterialRoute(screen) {

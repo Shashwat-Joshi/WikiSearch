@@ -1,7 +1,20 @@
+import 'package:hive/hive.dart';
+
+part 'Wikipage.g.dart';
+
+@HiveType(typeId: 1)
 class WikiPage {
-  final int pageid, index;
+  @HiveField(0)
+  final int pageid;
+  @HiveField(1)
+  final int index;
+  @HiveField(2)
   final String title;
-  final String? thumbnail, description;
+  @HiveField(3)
+  final String? thumbnail;
+  @HiveField(4)
+  final String? description;
+  @HiveField(5)
   final String fullurl;
 
   WikiPage({

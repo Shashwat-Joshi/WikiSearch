@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wikiapp/cubit/wiki_search_cubit/wiki_search/wikisearch_cubit.dart';
+import 'package:wikiapp/cubits/wiki_search_cubit/wiki_search/wikisearch_cubit.dart';
 import 'package:wikiapp/theme/app_theme.dart';
-import 'package:wikiapp/view/search_results/widgets/nointernet_widget.dart';
-import 'package:wikiapp/view/search_results/widgets/notfound_widget.dart';
-import 'package:wikiapp/view/search_results/widgets/search_widget.dart';
-import 'package:wikiapp/view/search_results/widgets/wiki_tile.dart';
+import 'package:wikiapp/views/search_results/widgets/nointernet_widget.dart';
+import 'package:wikiapp/views/search_results/widgets/notfound_widget.dart';
+import 'package:wikiapp/views/search_results/widgets/search_widget.dart';
+import 'package:wikiapp/views/search_results/widgets/wiki_tile.dart';
 
 class SearchResults extends StatefulWidget {
   final String searchKeyword;

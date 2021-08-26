@@ -6,7 +6,7 @@ part 'searchcache_state.dart';
 
 class SearchcacheCubit extends Cubit<SearchcacheState> {
   Queue<String>? searchHistory;
-  var _box = Hive.box("cache");
+  var _box = Hive.box("search-cache");
 
   SearchcacheCubit() : super(SearchcacheInitial());
 

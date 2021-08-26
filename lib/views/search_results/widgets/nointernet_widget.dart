@@ -2,7 +2,7 @@ import 'package:app_settings/app_settings.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
-import 'package:wikiapp/cubit/wiki_search_cubit/wiki_search/wikisearch_cubit.dart';
+import 'package:wikiapp/cubits/wiki_search_cubit/wiki_search/wikisearch_cubit.dart';
 import 'package:wikiapp/theme/app_theme.dart';
 
 class NoInternetWidget extends StatelessWidget {
@@ -83,11 +83,11 @@ class NoInternetWidget extends StatelessWidget {
                 color: Color(0xff444647),
               ),
               _getButtonTile(
-                "Turn on mobile data",
+                "Turn on Wi-Fi / mobile data",
                 Icons.settings,
                 size,
                 () {
-                  AppSettings.openDataRoamingSettings();
+                  AppSettings.openWIFISettings();
                 },
               ),
               Container(
