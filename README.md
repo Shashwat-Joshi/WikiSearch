@@ -12,6 +12,9 @@
     <a href="https://github.com/Shashwat-Joshi/WikiSearch/graphs/contributors">
         <img src="https://img.shields.io/github/contributors/Shashwat-Joshi/WikiSearch"
             alt="Contributors"></a>
+    <a href="https://github.com/Shashwat-Joshi/WikiSearch/blob/main/LICENSE">
+        <img src="https://img.shields.io/github/license/Shashwat-Joshi/WikiSearch"
+        alt="License"></a>
     <a href="https://flutter.dev/">
         <img src="https://img.shields.io/badge/-Flutter-blue"
             alt="Flutter"/></a>
