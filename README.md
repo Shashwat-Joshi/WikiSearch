@@ -1,7 +1,4 @@
-<center>
-  <img alt="WikiSearch" src="" />
-</center>
-
+# wikiapp
 
 A new Flutter project.
 
