@@ -1,9 +1,6 @@
-<center>
-<div style="margin-top: 30px; margin-bottom: 30px">
-      <img style="height: 130px" alt="WikiSearch" src="https://raw.githubusercontent.com/Shashwat-Joshi/WikiSearch/main/docs/assets/wikisearch.svg" />
-</div>
-</center>
-
+<p align="center">
+<img src="https://raw.githubusercontent.com/Shashwat-Joshi/WikiSearch/main/docs/assets/wikisearch.svg" height="130" alt="WikiSearch" />
+</p>
 
 <p align="center" style="margin-bottom: 50px">
 <a href="https://github.com/Shashwat-Joshi/WikiSearch/issues">
@@ -20,15 +17,13 @@
             alt="Flutter"/></a>
 </p>
 
-
-
 # Table of contents
 
 <!--ts-->
    * [Project Description](#Project-Description)
    * [Working](#Working)
       * [App Architecture](#App-Architecture)
-      * [BLoC/Cubit Pattern](#BLoC/Cubit-Pattern)
+      * [BLoC/Cubit Pattern](#bloccubit-pattern)
       * [Caching using HiveDB](#Caching-using-HiveDB)
    * [App UI](#App-UI)
    * [Project Setup](#Project-Setup)
@@ -36,18 +31,15 @@
    * [How to get started with Flutter](#How-to-get-started-with-Flutter)
 <!--te-->
 
-<div style="height: 10px"></div>
 
 # Project Description
 - WikiSearch is a [Flutter](https://flutter.dev/) search engine which was build using BLoC/Cubit pattern and powered by the [MediaWiki](https://www.mediawiki.org/wiki/API:Main_page) API.
 - It also uses the [NewsApi](https://newsapi.org/) to show the latest news in its homescreen.
 - WikiSearch also uses caching to improve UX, for caching we have used a NoSQL database called [HiveDB](https://docs.hivedb.dev/#/).
 
-<div style="height: 10px"></div>
 
 # Working
 
-<div style="height: 10px"></div>
 
 ## App Architecture
 <center>
@@ -61,7 +53,6 @@
 4. If the data was fetched successfully it is cached using HiveDB.
 5. The UI is displayed according to these states.
 
-<div style="height: 10px"></div>
 
 ## BLoC/Cubit Pattern
 BLoC is a state management solution for flutter. In this project we have used cubit pattern.  
@@ -72,7 +63,6 @@ Below is a diagramatic representation of how cubit pattern works :
 
 To know more about BLoC: https://github.com/felangel/bloc
 
-<div style="height: 10px"></div>
 
 ## Caching using HiveDB
 
@@ -87,7 +77,6 @@ Hive is a NoSQL database which has really great performance in terms of both wri
 1. Search history (whatever keywords the user searched for).
 2. List of wiki articles that are being fetched from the MediaWiki API.
 
-<div style="height: 10px"></div>
 
 # App UI
 
@@ -106,8 +95,6 @@ Hive is a NoSQL database which has really great performance in terms of both wri
         </td>
     </tr></table>
 </div>
-
-<div style="height: 10px"></div>
 
 # Project Setup
 
@@ -133,8 +120,6 @@ flutter pub get
 flutter run --release
 ```
 
-<div style="height: 10px"></div>
-
 # To-Do
 
 - [ ] Implementing pagination (⭐ caching should only be done for top 10 results)  
@@ -144,8 +129,7 @@ flutter run --release
 - [ ] Connecting weather API 
   - [ ] Fetch data from weather API and display it on home screen.
   - [ ] Cache weather data.
-
-<div style="height: 10px"></div>
+- [ ] Improving documentation (😅)
 
 # How to get started with Flutter
 
